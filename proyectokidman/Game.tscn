@@ -1,0 +1,83 @@
+[gd_scene load_steps=15 format=3 uid="uid://4hahagty0f4e"]
+
+[ext_resource type="Texture2D" uid="uid://dxn3a44ca85a3" path="res://Carro.png" id="1_wbfu4"]
+[ext_resource type="Script" uid="uid://jcyym6rh5guy" path="res://game.gd" id="1_xkndl"]
+[ext_resource type="Texture2D" uid="uid://dem2a6slbjjcq" path="res://Animaciones/derecha/1.png" id="2_gwjdr"]
+[ext_resource type="Texture2D" uid="uid://c44oa1k15nv3v" path="res://Animaciones/derecha/2.png" id="3_lvtmh"]
+[ext_resource type="Texture2D" uid="uid://d0rk0rigfwcip" path="res://Animaciones/derecha/3.png" id="4_yyih5"]
+[ext_resource type="Texture2D" uid="uid://dnwx1ygtxqc8h" path="res://Animaciones/derecha/4.png" id="5_qjyg3"]
+[ext_resource type="Texture2D" uid="uid://cv4ja205w21fj" path="res://Animaciones/derecha/5.png" id="6_elkpi"]
+[ext_resource type="Texture2D" uid="uid://cdatirk2aew7a" path="res://Animaciones/izquierda/1.png" id="8_0yprl"]
+[ext_resource type="Texture2D" uid="uid://ckvoit7js7vv1" path="res://Animaciones/izquierda/2.png" id="9_wuoie"]
+[ext_resource type="Texture2D" uid="uid://bu6k4lgutxb45" path="res://Animaciones/izquierda/3.png" id="10_bvhbk"]
+[ext_resource type="Texture2D" uid="uid://dt6mjvvjjdomt" path="res://Animaciones/izquierda/4.png" id="11_cpsxm"]
+[ext_resource type="Texture2D" uid="uid://dh840qh5cqlrh" path="res://Animaciones/izquierda/5.png" id="12_hmewc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkndl"]
+size = Vector2(92, 166)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkndl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gwjdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lvtmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yyih5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qjyg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_elkpi")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wbfu4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0yprl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wuoie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bvhbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cpsxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hmewc")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 6.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(309, 791)
+motion_mode = 1
+script = ExtResource("1_xkndl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_xkndl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xkndl")
+animation = &"derecha"
+frame_progress = 0.148109

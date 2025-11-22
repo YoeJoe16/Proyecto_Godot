@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2rmq5uu7e205"]
+
+[ext_resource type="PackedScene" uid="uid://4hahagty0f4e" path="res://Game.tscn" id="1_0d2wr"]
+[ext_resource type="PackedScene" uid="uid://cd5x4k4i8ov1d" path="res://pista.tscn" id="2_bgojs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pista" parent="." instance=ExtResource("2_bgojs")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_0d2wr")]

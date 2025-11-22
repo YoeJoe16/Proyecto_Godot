@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd5x4k4i8ov1d"]
+
+[ext_resource type="Texture2D" uid="uid://b0o43wdm64k23" path="res://pista.png" id="1_0fk5m"]
+[ext_resource type="Script" uid="uid://barfleogq24ey" path="res://pista.gd" id="2_i6cd8"]
+
+[node name="Pista" type="Sprite2D"]
+position = Vector2(299.5, -1423)
+scale = Vector2(0.777344, 3.60714)
+texture = ExtResource("1_0fk5m")
+script = ExtResource("2_i6cd8")
